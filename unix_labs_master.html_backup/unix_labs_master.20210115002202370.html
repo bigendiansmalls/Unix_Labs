@@ -161,12 +161,6 @@ Error message and password prompt
 
 <li>UNIX Lab 2</li>
 
-<li>UNIX Lab 3</li>
-
-<li>UNIX Lab 4</li>
-
-<li>UNIX Lab 5</li>
-
 </ul>
 </p>
 
@@ -10045,12 +10039,9 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210115000208865" modified="20210115003640297" title="$:/DefaultTiddlers">
+<div created="20210115000208865" modified="20210115001148292" title="$:/DefaultTiddlers">
 <pre>[[UNIX Lab 1]]
-[[UNIX Lab 2]]
-[[UNIX Lab 3]]
-[[UNIX Lab 4]]
-[[UNIX Lab 5]]</pre>
+[[UNIX Lab 2]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10061,7 +10052,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210115003633384" list="$:/ControlPanel [[UNIX Lab 5]] [[UNIX Lab 4]] [[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]]" modified="20210115003633384" title="$:/StoryList">
+<div list="[[UNIX Lab 1]] [[UNIX Lab 2]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10173,7 +10164,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210114235938532" modified="20210115003531676" tags="" title="UNIX Lab 1">
+<div created="20210114235938532" modified="20210115001132300" tags="" title="UNIX Lab 1">
 <pre>!!''Lab Overview''
 # insert objectives here
 # commands will be in `red`
@@ -10197,7 +10188,7 @@ Within your Kali VM - click the terminal icon on the menu bar
 * List the contents of this directory using the long format `ls -l`
 </pre>
 </div>
-<div created="20210115000843232" modified="20210115003132320" tags="" title="UNIX Lab 2">
+<div created="20210115000843232" modified="20210115002202281" tags="" title="UNIX Lab 2">
 <pre>!!''Lab Overview''
 # insert objectives here
 
@@ -10213,46 +10204,6 @@ Within your Kali VM - click the terminal icon on the menu bar
 * dump only the lines containing froggie to a new file called file1.txt `grep froggie rockyou.txt &gt; file1.txt`
 * sort the file you just created and display the last 10 entires `sort file1.txt|tail -10`
 * remove the files you just created `rm file1.txt rockyou.txt`</pre>
-</div>
-<div created="20210115002524021" modified="20210115003247416" tags="" title="UNIX Lab 3">
-<pre>!!''Lab Overview''
-# shebang (what??)
-# changing file bits to make executable
-# cat, sort, nano, for loops
-# basic bash scripting
-
-!!''Basic shell script''
-* Create the following file in nano called loop.sh `nano loop.sh &lt;enter&gt;`
-Type the following script into the editor:
-
-```
-#!/bin/bash
-
-for i in $(seq 1 10);
-	do echo &quot;bob&quot; &gt;&gt; tmp1.txt;
-done;
-```
-* Exit nano and save `CTRL+x`
-* change the permissions of the loop.sh to executable `chmod 755 ./loop.sh`
-* execute the the loop.sh file `./loop.sh`
-* cat the created file `cat ./tmp1.txt`
-* sort the file uniquely `sort -u ./tmp1.txt`
-* add a line to tmp1.txt `echo ted &gt;&gt; ./tmp1.txt`
-* cat the tmp1.txt again
-* sort tmp1.txt uniquely again</pre>
-</div>
-<div created="20210115003259871" modified="20210115003512315" tags="" title="UNIX Lab 4">
-<pre>!!''Lab Overview''
-# Create a basic python script
-create a basic python script that can (optionally) take 1 argument, hash it, verify it against a known stored password hash. if it doesn't match, loop ask for input, if it does print success until you hit ctrl+c</pre>
-</div>
-<div created="20210115003535558" modified="20210115003628153" tags="" title="UNIX Lab 5">
-<pre>!!''Lab Overview''
-# Use git to clone a repository
-# use configure and make to build the downloaded repo
-# build nmap using the above and run
-
-</pre>
 </div>
 
 
