@@ -10045,22 +10045,21 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210115000208865" modified="20210118005702844" title="$:/DefaultTiddlers">
+<div created="20210115000208865" modified="20210118004052309" title="$:/DefaultTiddlers">
 <pre>[[UNIX Lab 1]]
 [[UNIX Lab 2]]
-[[UNIX Lab 3]]
-[[UNIX Lab 4]]</pre>
+[[UNIX Lab 3]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210115000127629" modified="20210118005706431" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Open</pre>
+<div created="20210115000127629" modified="20210118004955347" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Recent</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210118004956946" list="[[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]]" modified="20210118005709725" title="$:/StoryList">
+<div created="20210118004956946" list="[[UNIX Lab 4]] [[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]]" modified="20210118004956946" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10242,7 +10241,7 @@ done;
 * cat the tmp1.txt again
 * Sort tmp1.txt uniquely again</pre>
 </div>
-<div created="20210115003259871" modified="20210118005847278" tags="" title="UNIX Lab 4">
+<div created="20210115003259871" modified="20210118005613432" tags="" title="UNIX Lab 4">
 <pre>!!''Lab Overview''
 # Create a basic python script
 # Learn import, print, input, basic loops and comparisons
@@ -10260,64 +10259,7 @@ sys.exit(0)
 ```
 * Save the file as `pylab.py`
 * Change the file so it is executable
-* run with `python ./pylab.py`
-!!''BONUS - Complex Python for Reference''
-# Have a look and see if you understand all that's going on here
-# We will discuss in class, time permitting
-```
-#!/usr/bin/env python
-
-## Libraries we will need
-import sys
-from Crypto.Hash import MD5
-
-## Our secret password stored as an MD5 Hash
-secret_hash=&quot;4034a346ccee15292d823416f7510a2f&quot;
-
-## Primary function
-def checkPass(inputPass):
-  inputPass = inputPass
-  while True:
-    print(&quot;You entered, {name}&quot;.format(name=inputPass))
-
-    # create MD5 hash of the entry
-    entryHash = MD5.new()
-    entryHash.update(inputPass.encode('utf-8'))
-    hexHash = entryHash.hexdigest()
-
-    # show the user the hash of the entry they sent
-    print(&quot;This is the MD5 hash of your entry: {hash}&quot;.format(hash=hexHash))
-
-    # lastly let's compare it to our stored secret
-    if (hexHash == secret_hash):
-      print(&quot;The hashes match! The password is: {password}&quot;.format(password=inputPass))
-      break
-    else:
-      print(&quot;The input password is not correct&quot;)
-      inputPass = enterPass()
-
-  sys.exit()
-
-## funtion to get new password attempt
-def enterPass():
-  newPass = input(&quot;Please enter new password attempt:&quot;)
-  while (len(newPass) == 0):
-    newPass = input(&quot;Password must be at least 1 character, please re-enter:&quot;)
-  return newPass
-
-
-## This is the entry point to the program
-## Read arguments and call the primary function
-if __name__==&quot;__main__&quot;:
-
-#  Check args
-  if len(sys.argv) != 2:
-    print(&quot;You must enter exactly one argument.\nExiting.&quot;)
-    sys.exit(-1)
-  else:
-    testPass = sys.argv[1]
-    checkPass(testPass)
-```</pre>
+* run with `python ./pylab.py`</pre>
 </div>
 <div created="20210115003535558" modified="20210115003628153" tags="" title="UNIX Lab 5">
 <pre>!!''Lab Overview''
