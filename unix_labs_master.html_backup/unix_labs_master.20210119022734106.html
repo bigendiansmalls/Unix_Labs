@@ -157,6 +157,8 @@ Error message and password prompt
 
 <li>$:/themes/tiddlywiki/vanilla</li>
 
+<li>Draft of 'UNIX Lab 5'</li>
+
 <li>UNIX Lab 1</li>
 
 <li>UNIX Lab 2</li>
@@ -10064,7 +10066,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div list="[[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[UNIX Lab 5]] [[UNIX Lab 6]]" title="$:/StoryList">
+<div list="[[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[Draft of 'UNIX Lab 5']] [[UNIX Lab 6]]" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10175,6 +10177,33 @@ Error message and password prompt
         }
     }
 }</pre>
+</div>
+<div created="20210115003535558" draft.of="UNIX Lab 5" draft.title="UNIX Lab 5" modified="20210119022731438" tags="" title="Draft of 'UNIX Lab 5'">
+<pre>!!''Lab Overview''
+* Use git to clone a repository
+* Use configure and make to build the downloaded repo
+* Build nmap using the above and run
+!!Download, build and use NMAP
+* Create a directory off your home directory called nmap-dev
+* Change to that new directory
+* Use the git command to clone the nmap repository `git clone https://github.com/nmap/nmap.git`
+* Change to the newly created directory `cd ./nmap`
+* Configure the repository for building, check for errors `./configure`
+* Looks like we're missing the headers for ssl and ssh
+* Change to root `sudo -i`
+* Update the package manager `apt update`
+* Install the missing packages `apt install -y libssl-dev libssh-dev`
+* Exit sudo `exit`
+* Re-run the configure step `./configure`
+* Check for clean configure
+* If no errors, ensure the build is clean `make clean`
+* Build the repo with make using 2 concurrent processes `make -sj2`
+* Check for errors (warnings are generally OK)
+* Change to the bin directory and run the new nmap `./nmap -v`
+* Run the installed version of nmap `nmap -v`
+* The &quot;which&quot; command is useful to know which one you are using `which nmap`
+* Note differences?
+</pre>
 </div>
 <div created="20210114235938532" modified="20210119022615645" tags="" title="UNIX Lab 1">
 <pre>!!''Lab Overview''
@@ -10323,34 +10352,34 @@ if __name__==&quot;__main__&quot;:
     checkPass(testPass)
 ```</pre>
 </div>
-<div created="20210115003535558" modified="20210119022735732" tags="" title="UNIX Lab 5">
+<div created="20210115003535558" modified="20210119021735939" tags="" title="UNIX Lab 5">
 <pre>!!''Lab Overview''
 * Use git to clone a repository
 * Use configure and make to build the downloaded repo
 * Build nmap using the above and run
 !!Download, build and use NMAP
-* Create a directory off your home directory called nmap-dev
-* Change to that new directory
-* Use the git command to clone the nmap repository `git clone https://github.com/nmap/nmap.git`
-* Change to the newly created directory `cd ./nmap`
-* Configure the repository for building, check for errors `./configure`
-* Looks like we're missing the headers for ssl and ssh
-* Change to root `sudo -i`
-* Update the package manager `apt update`
-* Install the missing packages `apt install -y libssl-dev libssh-dev`
-* Exit sudo `exit`
-* Re-run the configure step `./configure`
-* Check for clean configure
-* If no errors, ensure the build is clean `make clean`
-* Build the repo with make using 2 concurrent processes `make -sj2`
-* Check for errors (warnings are generally OK)
-* Change to the bin directory and run the new nmap `./nmap -v`
-* Run the installed version of nmap `nmap -v`
-* The &quot;which&quot; command is useful to know which one you are using `which nmap`
-* Note differences?
+# Create a directory off your home directory called nmap-dev
+# Change to that new directory
+# Use the git command to clone the nmap repository `git clone https://github.com/nmap/nmap.git`
+# Change to the newly created directory `cd ./nmap`
+# Configure the repository for building, check for errors `./configure`
+# Looks like we're missing the headers for ssl and ssh
+# Change to root `sudo -i`
+# Update the package manager `apt update`
+# Install the missing packages `apt install -y libssl-dev libssh-dev`
+# Exit sudo `exit`
+# Re-run the configure step `./configure`
+# Check for clean configure
+# If no errors, ensure the build is clean `make clean`
+# Build the repo with make using 2 concurrent processes `make -sj2`
+# Check for errors (warnings are generally OK)
+# Change to the bin directory and run the new nmap `./nmap -v`
+# Run the installed version of nmap `nmap -v`
+# The &quot;which&quot; command is useful to know which one you are using `which nmap`
+# Note differences?
 </pre>
 </div>
-<div created="20210119015741905" modified="20210119022758487" tags="" title="UNIX Lab 6">
+<div created="20210119015741905" modified="20210119022318506" tags="" title="UNIX Lab 6">
 <pre>!!''Lab Overview''
 * Create and compile a basic C program
 * Change owner to root
@@ -10370,15 +10399,15 @@ int main(int argc, char *argv[]) {
 }
 ```
 !!Compile and Run
-* Add the above code to a source file called ha.c `nano ha.c`
-* Compile: `cc -o ha ha.c`
-* Chown: `sudo chown 0:0 ha`
-* Setuid: `chmod +s ./ha`
-* Why didn't that work? We need to be root to add +s to a root-owned program `sudo chmod +s ./ha`
-* Check our id: `id`
-* Execute: `./ha 0 0`
-* Check id again: `id`
-* Exit back to normal `exit`</pre>
+# Add the above code to a source file called ha.c `nano ha.c`
+# Compile: `cc -o ha ha.c`
+# Chown: `sudo chown 0:0 ha`
+# Setuid: `chmod +s ./ha`
+# Why didn't that work? We need to be root to add +s to a root-owned program `sudo chmod +s ./ha`
+# Check our id: `id`
+# Execute: `./ha 0 0`
+# Check id again: `id`
+# Exit back to normal `exit`</pre>
 </div>
 
 
