@@ -167,8 +167,6 @@ Error message and password prompt
 
 <li>UNIX Lab 5</li>
 
-<li>UNIX Lab 6</li>
-
 </ul>
 </p>
 
@@ -10047,24 +10045,23 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210115000208865" modified="20210119020145320" title="$:/DefaultTiddlers">
+<div created="20210115000208865" modified="20210119015241365" title="$:/DefaultTiddlers">
 <pre>[[UNIX Lab 1]]
 [[UNIX Lab 2]]
 [[UNIX Lab 3]]
 [[UNIX Lab 4]]
-[[UNIX Lab 5]]
-[[UNIX Lab 6]]</pre>
+[[UNIX Lab 5]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
 </div>
-<div created="20210115000127629" modified="20210119020138337" title="$:/state/tab/sidebar--595412856">
-<pre>$:/core/ui/SideBar/Recent</pre>
+<div created="20210115000127629" modified="20210119015248777" title="$:/state/tab/sidebar--595412856">
+<pre>$:/core/ui/SideBar/Open</pre>
 </div>
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210119020139842" list="$:/ControlPanel [[UNIX Lab 6]] [[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[UNIX Lab 5]]" modified="20210119020139842" title="$:/StoryList">
+<div created="20210119015228098" list="[[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[UNIX Lab 5]]" modified="20210119015251951" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10176,7 +10173,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210114235938532" modified="20210119020053527" tags="" title="UNIX Lab 1">
+<div created="20210114235938532" modified="20210118004128004" tags="" title="UNIX Lab 1">
 <pre>!!''Lab Overview''
 # Learn basic UNIX/LINUX commands for navigation
 # Commands will be in `red`
@@ -10347,33 +10344,6 @@ if __name__==&quot;__main__&quot;:
 * Run the installed version of nmap `nmap -v`
 * Note differences?
 </pre>
-</div>
-<div created="20210119015741905" modified="20210119020121632" tags="" title="UNIX Lab 6">
-<pre>!!''Lab Overview''
-* Create and compile a basic C program
-* Change owner to root
-* Add setuid bit to run program as root
-* Test program 
-
-!!Make a setuid program
-```C
-#include &lt;stdlib.h&gt;
-#include &lt;unistd.h&gt;
-int main(int argc, char *argv[]) {
-    if (argc&lt;3)exit(1 );
-    setuid(atoi(argv[1]));
-    setgid(atoi(argv[2]));
-    execl(&quot;/bin/sh&quot;,&quot;sh&quot;,NULL);
-    return 0;
-}
-```
-
-!!Compile and Run
-# Compile: `cc -o ha ha.c`
-# Chown: `sudo chown 0:0 ha`
-# Setuid: `chmod +xs ha`
-# Execute: `./ha 0 0`
-# Check: `id`</pre>
 </div>
 
 
