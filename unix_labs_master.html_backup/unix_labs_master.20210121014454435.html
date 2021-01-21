@@ -173,8 +173,6 @@ Error message and password prompt
 
 <li>UNIX Lab 8</li>
 
-<li>UNIX Lab 9</li>
-
 </ul>
 </p>
 
@@ -10053,7 +10051,7 @@ Error message and password prompt
     }
 }</pre>
 </div>
-<div created="20210115000208865" modified="20210121022038052" title="$:/DefaultTiddlers">
+<div created="20210115000208865" modified="20210121010805316" title="$:/DefaultTiddlers">
 <pre>[[UNIX Lab 1]]
 [[UNIX Lab 2]]
 [[UNIX Lab 3]]
@@ -10061,8 +10059,7 @@ Error message and password prompt
 [[UNIX Lab 5]]
 [[UNIX Lab 6]]
 [[UNIX Lab 7]]
-[[UNIX Lab 8]]
-[[UNIX Lab 9]]</pre>
+[[UNIX Lab 8]]</pre>
 </div>
 <div title="$:/isEncrypted">
 <pre>no</pre>
@@ -10073,7 +10070,7 @@ Error message and password prompt
 <div title="$:/status/RequireReloadDueToPluginChange">
 <pre>no</pre>
 </div>
-<div created="20210121022021634" list="$:/ControlPanel [[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[UNIX Lab 5]] [[UNIX Lab 6]] [[UNIX Lab 7]] [[UNIX Lab 8]] [[UNIX Lab 9]]" modified="20210121022030977" title="$:/StoryList">
+<div created="20210121010756656" list="[[UNIX Lab 1]] [[UNIX Lab 2]] [[UNIX Lab 3]] [[UNIX Lab 4]] [[UNIX Lab 5]] [[UNIX Lab 6]] [[UNIX Lab 7]] [[UNIX Lab 8]]" modified="20210121010759073" title="$:/StoryList">
 <pre></pre>
 </div>
 <div author="JeremyRuston" core-version="&gt;=5.0.0" dependents="$:/themes/tiddlywiki/vanilla" description="Emphasises individual tiddlers" name="Snow White" plugin-priority="0" plugin-type="theme" title="$:/themes/tiddlywiki/snowwhite" type="application/json" version="5.1.23">
@@ -10467,22 +10464,6 @@ msfvenom -p java/jsp_shell_bind_tcp LPORT=&lt;port between 20000-30000&gt; -f wa
 * Can you run TSO commands?
 * Which user are you running commands as?
 * What ''attributes'' does this account have (hint, this needs a TSO RACF command)?</pre>
-</div>
-<div created="20210121020234482" modified="20210121022029168" tags="" title="UNIX Lab 9">
-<pre>!!''Lab Overview''
-* Mount a malicious ZFS aggregate
-* See why the mount command is so dangerous
-* Look at privesc shells
-
-!!Mount malicious ZFS aggregate
-# Log in to your USS account
-# Create a directory that will serve as your mount point in your home directory, any name is fine
-# Issue the mount command `/usr/sbin/mount -t zfs -f CHAD.ZFS ./&lt;dir_you_created`
-# Did it work? Any errors?
-# Let's retry with the setuid off
-# Chad will change permissions
-# Unmount and remount and test again
-# Let's review together the privesc shells</pre>
 </div>
 
 
